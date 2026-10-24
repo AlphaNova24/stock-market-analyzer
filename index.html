@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StockMarket Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Market Dashboard</p>
+          <h1>StockMarket Analyzer</h1>
+        </div>
+        <div class="badge">Live Demo</div>
+      </header>
+
+      <section class="controls panel">
+        <div class="field-group">
+          <label for="sortRequirement">Sort by requirement</label>
+          <select id="sortRequirement">
+            <option value="performanceScore">Best performance score</option>
+            <option value="priceChange">Highest price change %</option>
+            <option value="volume">Highest trading volume</option>
+            <option value="marketCap">Largest market cap</option>
+            <option value="peRatio">Best valuation (lowest P/E)</option>
+            <option value="growth">Strongest growth</option>
+            <option value="riskLevel">Lowest risk</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="sortDirection">Order</label>
+          <select id="sortDirection">
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+          </select>
+        </div>
+
+        <div class="field-group search-field">
+          <label for="searchInput">Search stock</label>
+          <input id="searchInput" type="text" placeholder="Enter symbol or company" />
+        </div>
+
+        <div class="field-group">
+          <label for="sectorFilter">Sector</label>
+          <select id="sectorFilter">
+            <option value="all">All sectors</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="summary-grid" id="summaryGrid"></section>
+
+      <main class="panel table-panel">
+        <div class="table-heading">
+          <h2>Stock Performance Table</h2>
+          <span id="resultCount"></span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Company</th>
+                <th>Sector</th>
+                <th>Price</th>
+                <th>Day Change</th>
+                <th>Market Cap</th>
+                <th>Volume</th>
+                <th>P/E Ratio</th>
+                <th>Risk</th>
+                <th>Growth</th>
+                <th>Performance</th>
+              </tr>
+            </thead>
+            <tbody id="stockTableBody"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
